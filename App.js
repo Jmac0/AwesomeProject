@@ -1,20 +1,39 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { View, Text, SafeAreaView, StyleSheet } from 'react-native';
+import Box from './components/Box';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    /*must use flex 1 all the way up the component tree to fill screen */
+    <SafeAreaView style={styles.SafeArea}>
+      {/*convert styles prop to array and pass in more styles if needed s they are reusable*/}
+      <View style={styles.container}>
+        <Text style={styles.headingText}>Here are some boxes of text</Text>
+        <Box color={'#2aa198'} text={'Cyan #2aa198'} />
+        <Box color={'#268bd2'} text={'Blue #268bd2'} />
+        <Box color={'#d33682'} text={'Magenta #d33682'} />
+        <Box color={'#cb4b16'} text={'Orange #cb4b16'} />
+      </View>
+    </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  headingText: {
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    fontSize: 18,
+  },
+  SafeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+  },
+  container: {
+    flex: 1, // flex 1 fills full screen
+    // padding
+    marginTop: 40,
+    paddingVertical: 10, // styles dont have units!
+    paddingHorizontal: 10,
   },
 });
+
+export default App;
