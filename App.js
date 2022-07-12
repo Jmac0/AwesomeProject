@@ -10,7 +10,7 @@ const App = () => {
       <View style={styles.container}>
         <Text style={styles.headingText}>Here are some boxes of text</Text>
         <Box color={'#2aa198'} text={'Cyan #2aa198'} />
-        <Box color={'#268bd2'} text={'Blue #268bd2'} />
+        <Box color={'#268bd1'} text={'Blue #268bd2'} />
         <Box color={'#d33682'} text={'Magenta #d33682'} />
         <Box color={'#cb4b16'} text={'Orange #cb4b16'} />
       </View>
